@@ -15,9 +15,7 @@ namespace SampleNetApp
 
         private void btnSayHi_Click(object sender, EventArgs e)
         {
-            
             MessageBox.Show("Hello world from .Net App");
-
         }
     }
 }
