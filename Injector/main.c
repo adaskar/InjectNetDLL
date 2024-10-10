@@ -83,7 +83,7 @@ int wmain(int argc, LPWSTR argv[])
 	wprintf(L"Finding LoadLibraryW\n");
 	psrLoadLibrary = (PTHREAD_START_ROUTINE)GetProcAddress(GetModuleHandle(L"Kernel32"), "LoadLibraryW");
 	if (!psrLoadLibrary) {
-		wprintf(L"WriteProcessMemory failed. LastErrorCode: %X\n", GetLastError());
+		wprintf(L"GetProcAddress failed. LastErrorCode: %X\n", GetLastError());
 		return EXIT_FAILURE;
 	}
 	wprintf(L"Found LoadLibraryW at %p\n", psrLoadLibrary);
