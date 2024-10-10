@@ -22,7 +22,7 @@ HANDLE GetProcessByName(LPWSTR procname, DWORD *pdwPID)
 		proc = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, FALSE, pids[i]);
 		if (proc) {
 			if (EnumProcessModules(proc, &mod, sizeof(mod), &dw)) {
-				GetModuleBaseNameW(proc, mod, pn, sizeof(pn) / sizeof(char));
+				GetModuleBaseNameW(proc, mod, pn, ARRAYSIZE(pn));
 				if (_wcsicmp(pn, procname) == 0) {
 					CloseHandle(proc);
 					*pdwPID = pids[i];
